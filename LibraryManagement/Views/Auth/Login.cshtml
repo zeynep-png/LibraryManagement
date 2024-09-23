@@ -1,0 +1,43 @@
+﻿@model LoginViewModel
+
+<div class="row offset-3 mt-5">
+    <div class="col-6" style="width:60%">
+        <div class="card">
+            <div class="card-header fw-bold fs-4 text-center">
+                Login Form
+            </div>
+            <div class="card-body">
+                <!-- Display an error message if it exists in ViewBag -->
+                @if (ViewBag.Error != null)
+                {
+                    <div class="alert alert-danger">
+                        @ViewBag.Error
+                    </div>
+                }
+                <!-- Form for user login -->
+                <form method="post" asp-controller="Auth" asp-action="Login">
+                    <div class="form-floating mt-2">
+                        <!-- Email input field -->
+                        <input asp-for="Email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">Email address</label>
+                        <!-- Validation message for email -->
+                        <span asp-validation-for="Email" class="text-danger fw-bold mt-1"></span>
+                    </div>
+                    <div class="form-floating mt-2">
+                        <!-- Password input field -->
+                        <input asp-for="Password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                        <label for="floatingPassword">Password</label>
+                        <!-- Validation message for password -->
+                        <span asp-validation-for="Password" class="text-danger fw-bold mt-1"></span>
+                    </div>
+
+                    <!-- Submit button for the login form -->
+                    <button class="btn w-100 py-2" style="background-color: #4B4B4B; color: white;" type="submit">Sign in</button>
+
+                    <!-- Link to the sign-up page for new users -->
+                    <p class="mt-2 text-center">Don't have an account? <a href="/Auth/SignUp" class="text-decoration-none">Sign up</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

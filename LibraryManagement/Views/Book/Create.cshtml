@@ -1,0 +1,44 @@
+﻿@model BookCreateViewModel
+
+<h3>Add a new Book</h3>
+
+<form method="post" asp-controller="Book" asp-action="Create" enctype="multipart/form-data">
+    <div class="form-group mb-3">
+        <label asp-for="Title" class="form-label">Title</label>
+        <input asp-for="Title" class="form-control" type="text" />
+        <span asp-validation-for="Title" class="text-danger mt-2 fw-bold"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="AuthorName" class="form-label">Author Full Name</label>
+        <input asp-for="AuthorName" class="form-control" type="text" />
+        <span asp-validation-for="AuthorName" class="text-danger mt-2 fw-bold"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="Genre" class="form-label">Genre</label>
+        <input asp-for="Genre" class="form-control" type="text" />
+        <span asp-validation-for="Genre" class="text-danger mt-2 fw-bold"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="PublishDate" class="form-label">Publish Date</label>
+        <input asp-for="PublishDate" class="form-control" type="text" placeholder="mm/dd/yyyy" />
+        <span asp-validation-for="PublishDate" class="text-danger mt-2 fw-bold"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="ISBN" class="form-label">ISBN</label>
+        <input asp-for="ISBN" class="form-control" type="text" />
+        <span asp-validation-for="ISBN" class="text-danger mt-2 fw-bold"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="CopiesAvailable" class="form-label">Copies Available</label>
+        <input asp-for="CopiesAvailable" class="form-control" type="number" />
+        <span asp-validation-for="CopiesAvailable" class="text-danger mt-2 fw-bold"></span>
+    </div>
+
+    <!-- Submit button to save the book details -->
+    <button type="submit" class="btn w-100 mt-2" style="background-color: #4B4B4B; color: white;">Save</button>
+</form>

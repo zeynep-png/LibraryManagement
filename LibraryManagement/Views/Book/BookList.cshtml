@@ -1,0 +1,76 @@
+﻿@model List<BookListViewModel>
+
+<h3 class="text-center mt-5">Book List</h3>
+
+<div class="mt-5">
+    @foreach (var book in Model)
+    {
+        <div class="card mb-3">
+            <div class="card-header fw-bold">
+                @book.Title
+            </div>
+            <div class="card-body">
+                <p><strong>Author:</strong> @book.AuthorName</p>
+                <p class="card-text"><strong>Genre:</strong> @book.Genre</p>
+
+                <a asp-controller="Book" asp-action="Details" asp-route-id="@book.Id" class="btn btn-primary"
+                   style="background-color: #4B4B4B; border-color: #4B4B4B;">Book Details</a>
+                <a asp-controller="Book" asp-action="Edit" asp-route-id="@book.Id" class="btn btn-primary"
+                   style="background-color: #4B4B4B; border-color: #4B4B4B;">Edit the book</a>
+                <a asp-controller="Book" asp-action="Delete" asp-route-id="@book.Id" class="btn btn-danger"
+                   style="background-color: #ff4d4d; border-color: #ff4d4d;">Delete</a>
+            </div>
+        </div>
+    }
+</div>
+
+<!-- Floating "Add New Book" Button -->
+<a asp-controller="Book" asp-action="Create" class="btn rounded-circle text-white p-3"
+   style="position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; display: flex; justify-content: center; align-items: center; font-size: 24px; background-color: #4B4B4B;"
+   title="Add a new book">
+    +
+</a>
+
+<!-- Hover Tooltip for "Add New Book" Button -->
+<style>
+    <!-- Tooltip for Add New Book button -->
+    .btn:hover::after {
+        content: 'Add a new book'; <!--
+        Text for the tooltip -->
+        position: absolute;
+        bottom: 100%; <!--
+        Position above the button -->
+        right: 0;
+        padding: 5px 10px;
+        background-color: #4B4B4B; <!--
+        Background color for tooltip -->
+        color: white; <!--
+        Tooltip text color -->
+        border-radius: 5px; <!--
+        Rounded corners for tooltip -->
+        white-space: nowrap; <!--
+        Prevent text from wrapping -->
+        display: none; <!--
+        Hide tooltip by default -->
+    }
+
+    <!-- Show tooltip only on Add New Book button hover -->
+    .rounded-circle:hover::after {
+        display: block; <!--
+        Display tooltip on hover -->
+    }
+
+    <!-- Button hover effect -->
+    .btn:hover {
+        background-color: white; <!--
+        Change background to white on hover -->
+        color: #4B4B4B; <!--
+        Change text color to dark -->
+    }
+
+    <!-- Footer spacing to prevent overlap -->
+    body {
+        margin-bottom: 100px; <!--
+        Ensure space between footer and page content -->
+    }
+</style>

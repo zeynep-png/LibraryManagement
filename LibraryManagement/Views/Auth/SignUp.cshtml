@@ -1,0 +1,66 @@
+﻿@model SignUpViewModel
+
+<div class="row offset-3 mt-5">
+    <div class="col-6" style="width:60%">
+        <div class="card">
+            <div class="card-header fw-bold fs-4 text-center">
+                Sign-Up Form
+            </div>
+            <div class="card-body">
+                <!-- Display validation errors if the model state is invalid -->
+                @if (!ViewData.ModelState.IsValid)
+                {
+                    <div class="alert alert-danger">
+                        @foreach (var state in ViewData.ModelState.Values)
+                        {
+                            foreach (var error in state.Errors)
+                            {
+                                <p>@error.ErrorMessage</p>
+                            }
+                        }
+                    </div>
+                }
+
+                <!-- Form for user sign-up -->
+                <form method="post" asp-controller="Auth" asp-action="SignUp">
+                    <div class="form-floating mb-2">
+                        <!-- Full name input field -->
+                        <input asp-for="FullName" type="text" class="form-control" id="floatingFullName" placeholder="John Doe" required>
+                        <label for="floatingFullName">Full Name</label>
+                    </div>
+
+                    <div class="form-floating mb-2">
+                        <!-- Phone number input field -->
+                        <input asp-for="PhoneNumber" type="tel" class="form-control" id="floatingPhoneNumber" placeholder="+1234567890" required>
+                        <label for="floatingPhoneNumber">Phone Number</label>
+                    </div>
+
+                    <div class="form-floating mb-2">
+                        <!-- Email input field -->
+                        <input asp-for="Email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
+                        <label for="floatingInput">Email address</label>
+                    </div>
+
+                    <div class="form-floating mb-2">
+                        <!-- Password input field -->
+                        <input asp-for="Password" type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
+                        <label for="floatingPassword">Password</label>
+                    </div>
+
+                    <div class="form-floating mb-2">
+                        <!-- Password confirmation input field -->
+                        <input asp-for="PasswordConfirm" type="password" class="form-control" id="floatingPasswordConfirm" placeholder="Confirm Password" required>
+                        <label for="floatingPasswordConfirm">Password Confirm</label>
+                    </div>
+
+                    <!-- Submit button for the sign-up form -->
+                    <button class="btn w-100 py-2" style="background-color: #4B4B4B; color: white;" type="submit">Sign Up</button>
+                </form>
+                <!-- Link to the login page for users who already have an account -->
+                <div class="text-center mt-3">
+                    <p>Already have an account? <a href="/Auth/Login">Login here</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

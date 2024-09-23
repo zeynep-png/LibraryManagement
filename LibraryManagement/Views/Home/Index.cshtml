@@ -1,0 +1,71 @@
+﻿@model Tuple<List<LibraryManagement.Models.BookListViewModel>, List<LibraryManagement.Models.AuthorDetailsViewModel>>
+
+<div class="container mt-5">
+
+    <h2 class="text-center mb-4">Welcome to the Library</h2>
+
+    <!-- Browse Books -->
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header text-center" style="background-color: white; color: black;">
+                    Browse Books
+                </div>
+                <div class="card-body" style="background-color: #f0f0f0;">
+                    <div class="row">
+                        @foreach (var book in Model.Item1.Take(3)) // Show only the first 3 books
+                        {
+                            <div class="col-md-4">
+                                <div class="card mb-3" style="background-color: white; border-radius: 15px; border: 1px solid black;">
+                                    <div class="card-body text-center">
+                                        <h5 style="color: black;">
+                                            <a href="@Url.Action("Details", "Book", new { id = book.Id })" style="text-decoration: none; color: black;">@book.Title</a>
+                                        </h5>
+                                        <p style="color: black;">Author: @book.AuthorName</p>
+                                        <p style="color: black;">Genre: @book.Genre</p>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    <div class="text-center mt-3">
+                        <a href="/Book/BookList" class="btn btn-outline-dark">See More Books</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Browse Authors -->
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header text-center" style="background-color: white; color: black;">
+                    Browse Authors
+                </div>
+                <div class="card-body" style="background-color: #f0f0f0;">
+                    <div class="row">
+                        @foreach (var author in Model.Item2.Take(3)) // Show only the first 3 authors
+                        {
+                            <div class="col-md-4">
+                                <div class="card mb-3" style="background-color: white; border-radius: 15px; border: 1px solid black;">
+                                    <div class="card-body text-center">
+                                        <h5 style="color: black;">
+                                            <a href="@Url.Action("Details", "Author", new { id = author.Id })" style="text-decoration: none; color: black;">
+                                                @author.FirstName @author.LastName
+                                            </a>
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    <div class="text-center mt-3">
+                        <a href="/Author/List" class="btn btn-outline-dark">See More Authors</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

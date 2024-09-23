@@ -1,0 +1,34 @@
+﻿@model BookDetailsViewModel
+
+<div class="container mt-5 p-4" style="background-color: #4B4B4B; border-radius: 10px;">
+    <h3 class="text-center text-white mb-4" style="font-size: 3rem;">Book Details</h3>
+
+    <div class="card" style="background-color: #6E6E6E; border-color: transparent;">
+        <div class="card-header fw-bold" style="font-size: 2rem;">
+            @Model.Title
+        </div>
+        <div class="card-body">
+            <h4 class="text-white" style="font-size: 1.8rem;">Author: @Model.AuthorName</h4>
+            <p class="text-white" style="font-size: 1.5rem;"><strong>Genre:</strong> @Model.Genre</p>
+            <p class="text-white" style="font-size: 1.5rem;"><strong>Publish Date:</strong> @Model.PublishDate.ToString("MMMM dd, yyyy", System.Globalization.CultureInfo.InvariantCulture)</p>
+            <p class="text-white" style="font-size: 1.5rem;"><strong>ISBN:</strong> @Model.ISBN</p>
+            <p class="text-white" style="font-size: 1.5rem;"><strong>Copies Available:</strong> @Model.CopiesAvailable</p>
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+        <a asp-controller="Book" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-light fw-bold"
+           style="border-radius: 50px; padding: 10px 30px; font-size: 1.2rem;">
+            Edit Book
+        </a>
+        <a asp-controller="Book" asp-action="BookList" class="btn btn-outline-light fw-bold ms-3"
+           style="border-radius: 50px; padding: 10px 30px; font-size: 1.2rem;">
+            Back to Book List
+        </a>
+        <form asp-controller="Book" asp-action="Delete" asp-route-id="@Model.Id" method="post" class="d-inline ms-3">
+            <button type="submit" class="btn btn-danger fw-bold" style="border-radius: 50px; padding: 10px 30px; font-size: 1.2rem;">
+                Delete Book
+            </button>
+        </form>
+    </div>
+</div>

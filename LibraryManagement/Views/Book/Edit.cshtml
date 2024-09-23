@@ -1,0 +1,62 @@
+﻿@model LibraryManagement.Models.BookEditViewModel
+
+<div class="container mt-5 p-4" style="background-color: #4B4B4B; border-radius: 10px;">
+    <h3 class="text-center text-white mb-4" style="font-size: 3rem;">Edit Book</h3>
+
+    <form method="post" asp-action="Edit">
+        <input type="hidden" asp-for="Id" />
+
+        <div class="mb-3">
+            <label for="Title" class="form-label text-white" style="font-size: 1.5rem;">Title</label>
+            <input asp-for="Title" class="form-control" style="font-size: 1.5rem;" />
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="AuthorId" class="form-label text-white" style="font-size: 1.5rem;">Author</label>
+            <select asp-for="AuthorId" class="form-select" style="font-size: 1.5rem;">
+                <option value="">Select an Author</option>
+                @* Author options should be populated from the controller *@
+                @foreach (var author in ViewBag.Authors)
+                {
+                    <option value="@author.Id">@author.FirstName @author.LastName</option>
+                }
+            </select>
+            <span asp-validation-for="AuthorId" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="Genre" class="form-label text-white" style="font-size: 1.5rem;">Genre</label>
+            <input asp-for="Genre" class="form-control" style="font-size: 1.5rem;" />
+            <span asp-validation-for="Genre" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="PublishDate" class="form-label text-white" style="font-size: 1.5rem;">Publish Date</label>
+            <input asp-for="PublishDate" class="form-control" type="date" style="font-size: 1.5rem;" />
+            <span asp-validation-for="PublishDate" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="ISBN" class="form-label text-white" style="font-size: 1.5rem;">ISBN</label>
+            <input asp-for="ISBN" class="form-control" style="font-size: 1.5rem;" />
+            <span asp-validation-for="ISBN" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="CopiesAvailable" class="form-label text-white" style="font-size: 1.5rem;">Copies Available</label>
+            <input asp-for="CopiesAvailable" class="form-control" type="number" style="font-size: 1.5rem;" />
+            <span asp-validation-for="CopiesAvailable" class="text-danger"></span>
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-light fw-bold" style="border-radius: 50px; padding: 10px 30px; font-size: 1.2rem;">
+                Save Changes
+            </button>
+            <a asp-controller="Book" asp-action="BookList" class="btn btn-outline-light fw-bold ms-3"
+               style="border-radius: 50px; padding: 10px 30px; font-size: 1.2rem;">
+                Back to Book List
+            </a>
+        </div>
+    </form>
+</div>

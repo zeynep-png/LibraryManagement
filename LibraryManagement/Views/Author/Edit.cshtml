@@ -1,0 +1,56 @@
+﻿@model LibraryManagement.Models.AuthorEditViewModel
+
+<!-- Container for editing author details with background and padding -->
+<div class="container mt-5 p-4" style="background-color: #4B4B4B; border-radius: 10px;">
+    <h3 class="text-center text-white mb-4" style="font-size: 3rem;">Edit Author</h3>
+
+    <!-- Form for editing author information -->
+    <form method="post" asp-action="Edit">
+        <!-- Hidden field for the author's ID -->
+        <input type="hidden" asp-for="Id" />
+
+        <!-- Input field for the author's first name -->
+        <div class="mb-3">
+            <label for="FirstName" class="form-label text-white" style="font-size: 1.5rem;">First Name</label>
+            <input asp-for="FirstName" class="form-control" style="font-size: 1.5rem;" />
+            <span asp-validation-for="FirstName" class="text-danger"></span>
+        </div>
+
+        <!-- Input field for the author's last name -->
+        <div class="mb-3">
+            <label for="LastName" class="form-label text-white" style="font-size: 1.5rem;">Last Name</label>
+            <input asp-for="LastName" class="form-control" style="font-size: 1.5rem;" />
+            <span asp-validation-for="LastName" class="text-danger"></span>
+        </div>
+
+        <!-- Input field for the author's date of birth -->
+        <div class="mb-3">
+            <label for="DateOfBirth" class="form-label text-white" style="font-size: 1.5rem;">Date of Birth</label>
+            <input asp-for="DateOfBirth" class="form-control" type="date" style="font-size: 1.5rem;" />
+            <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+        </div>
+
+        <!-- Button to submit the form to save changes -->
+        <div class="text-center">
+            <button type="submit" class="btn btn-light fw-bold" style="border-radius: 50px; padding: 10px 30px; font-size: 1.2rem;">
+                Save Changes
+            </button>
+            <!-- Link to return to the author list -->
+            <a asp-controller="Author" asp-action="List" class="btn btn-outline-light fw-bold ms-3"
+               style="border-radius: 50px; padding: 10px 30px; font-size: 1.2rem;">
+                Back to Author List
+            </a>
+        </div>
+    </form>
+
+    <!-- Form for uploading an image -->
+    <form method="post" asp-controller="" asp-action="Upload" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="Image">Select Image:</label>
+            <!-- Input field for selecting an image file -->
+            <input type="file" id="Image" name="Image" class="form-control" />
+        </div>
+        <!-- Button to submit the form for uploading the image -->
+        <button type="submit" class="btn btn-primary">Upload</button>
+    </form>
+</div>
