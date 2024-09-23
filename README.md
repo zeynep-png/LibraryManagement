@@ -19,36 +19,6 @@ This project is a Library Management System built using ASP.NET Core MVC. It all
 - [.NET SDK](https://dotnet.microsoft.com/download) (version 6.0 or later)
 - [Visual Studio](https://visualstudio.microsoft.com/) (or any IDE of your choice)
 
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/library-management-system.git
-   cd library-management-system
-   ```
-
-2. **Restore NuGet packages**
-   ```bash
-   dotnet restore
-   ```
-
-3. **Configure the database**
-   - Update the connection string in `appsettings.json` to point to your SQL Server instance:
-     ```json
-     "ConnectionStrings": {
-       "DefaultConnection": "Server=your_server;Database=LibraryDB;User Id=your_username;Password=your_password;"
-     }
-     ```
-
-4. **Run database migrations**
-   ```bash
-   dotnet ef database update
-   ```
-
-5. **Run the application**
-   ```bash
-   dotnet run
-   ```
 
 ### Testing
 
