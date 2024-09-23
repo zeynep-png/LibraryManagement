@@ -11,14 +11,12 @@ This project is a Library Management System built using ASP.NET Core MVC. It all
 ## Technologies Used
 - ASP.NET Core MVC
 - Entity Framework Core (for data access)
-- SQL Server (for database)
 - HTML, CSS (Bootstrap for styling)
 
 ## Getting Started
 
 ### Prerequisites
 - [.NET SDK](https://dotnet.microsoft.com/download) (version 6.0 or later)
-- [SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-downloads) (or SQL Server Express)
 - [Visual Studio](https://visualstudio.microsoft.com/) (or any IDE of your choice)
 
 ### Installation
@@ -72,8 +70,6 @@ Contributions are welcome! Please follow these steps:
 4. Push to the branch (`git push origin feature/YourFeature`).
 5. Open a pull request.
 
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 - [ASP.NET Core Documentation](https://docs.microsoft.com/en-us/aspnet/core/)
