@@ -38,35 +38,4 @@
     +
 </a>
 
-<!-- Hover Tooltip for "Add New Author" Button -->
-<!-- Tooltip style for Add New Author button -->
-.btn:hover::after {
-    content: 'Add a new author'; <!-- Text for the tooltip -->
-    position: absolute;
-    bottom: 100%; <!-- Position above the button -->
-    right: 0;
-    padding: 5px 10px;
-    background-color: #4B4B4B; <!-- Background color for tooltip -->
-    color: white; <!-- Tooltip text color -->
-    border-radius: 5px; <!-- Rounded corners for tooltip -->
-    white-space: nowrap; <!-- Prevent text from wrapping -->
-    display: none; <!-- Hide tooltip by default -->
-}
 
-<!-- Show tooltip only on Add New Author button hover -->
-.rounded-circle:hover::after {
-    display: block; <!-- Display tooltip on hover -->
-}
-
-<!-- Button hover effect -->
-.btn:hover {
-    background-color: white; <!-- Change background to white on hover -->
-    color: #4B4B4B; <!-- Change text color to dark -->
-}
-
-<!-- Footer spacing to prevent overlap -->
-body {
-    margin-bottom: 100px; <!-- Ensure space between footer and page content -->
-}
-
-</style>
