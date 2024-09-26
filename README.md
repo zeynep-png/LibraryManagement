@@ -40,7 +40,34 @@ Contributions are welcome! Please follow these steps:
 4. Push to the branch (`git push origin feature/YourFeature`).
 5. Open a pull request.
 
-
 ## Acknowledgments
 - [ASP.NET Core Documentation](https://docs.microsoft.com/en-us/aspnet/core/)
 - [Bootstrap Documentation](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+   
+### Main Page
+![image](https://github.com/user-attachments/assets/b01daf2f-dbd5-49b9-923d-f2a45e7aa624)
+
+### About Page
+
+![image](https://github.com/user-attachments/assets/f48b7415-bb39-453e-a750-5aa7088664c6)
+
+### Book List
+
+![image](https://github.com/user-attachments/assets/c24678fa-bf0a-441e-924b-2b445c4e8d66)
+
+### Book Edit Page
+
+![image](https://github.com/user-attachments/assets/335fc920-3144-4df1-b5d4-6be43a6e103f)
+
+### Book Details Page
+
+![image](https://github.com/user-attachments/assets/cdf9f749-6620-4e12-8ec0-35d99f40f242)
+
+### Add a New Book Page
+
+![image](https://github.com/user-attachments/assets/f020bdac-f47a-48d1-bb38-36fdadfbf024)
+
+
+
+
+
